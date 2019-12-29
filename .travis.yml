@@ -13,7 +13,7 @@ before_install:
  - gcloud auth activate-service-account --key-file travis-agent.json
  - gcloud config set project be-no-production-sandbox
  - gcloud config set compute/zone europe-west1-b
- - gcloud container clusters get-credentials env-prod-cicd --zone europe-west1-b --project be-no-production-sandbox
+ - gcloud container clusters get-credentials  envprod-cicd --zone europe-west1-b --project be-no-production-sandbox
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
  - docker build -t keyprolabs/client-test -f  ./cliebt/Dockerfile.dev ./client
 script:
