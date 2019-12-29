@@ -9,5 +9,5 @@ docker push keyprolabs/fib-server:$SHA
 docker push keyprolabs/worker-fib:$SHA
 kubectl apply -f app
 kubectl set image deployments/server-deployment server=keyprolabs/fib-server:$SHA
-kubectl set image deployments/client-deployment server=keyprolabs/multi-fib:$SHA
-kubectl set image deployments/worker-deployment server=keyprolabs/worker-fib:$SHA
+kubectl set image deployments/client-deployment client=keyprolabs/multi-fib:$SHA
+kubectl set image deployments/worker-deployment worker=keyprolabs/worker-fib:$SHA
